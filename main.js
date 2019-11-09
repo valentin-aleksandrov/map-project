@@ -32,3 +32,20 @@ const onMapClick = (e) => {
 	
 }
 mymap.on('click', onMapClick);
+
+
+
+const drawLine = (pointALan, pontALng, pointBLan, pointBLng, color='red') => {
+	const pointA = new L.LatLng(pointALan, pontALng);
+	const pointB = new L.LatLng(pointBLan, pointBLng);
+	const pointList = [pointA, pointB];
+
+const polyline = new L.Polyline(pointList, {
+		color: color,
+		weight: 3,
+		opacity: 0.5,
+		smoothFactor: 1
+	});
+	polyline.addTo(mymap);
+}
+drawLine(TU_COORDINATES[0], TU_COORDINATES[1], TU_COORDINATES[0], TU_COORDINATES[1]+ 1)
