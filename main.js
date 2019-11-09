@@ -60,8 +60,16 @@ const drawLine = (pointALan, pontALng, pointBLan, pointBLng, color = 'red') => {
 }
 // drawLine(TU_COORDINATES[0], TU_COORDINATES[1], TU_COORDINATES[0], TU_COORDINATES[1] + 1)
 
+const markerOnClick = ({latlng}) => {
+	console.log(latlng);
+	// {lat: 42.658781, lng: 23.355191}
+	L.popup()
+	.setLatLng([latlng.lat, latlng.lng])
+	.setContent("What should I do now?")
+	.openOn(map);
+}
 
-const drawMarker = (latitude, longitude) => L.marker([latitude, longitude]).addTo(map);	
+const drawMarker = (latitude, longitude) => L.marker([latitude, longitude]).on('click', markerOnClick).addTo(map);	
 
 const drawPointsOfInterest = (points) => {
 	const {features} = points
