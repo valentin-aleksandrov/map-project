@@ -1,9 +1,6 @@
-const {sum} = require('./sum')
-
 const TU_COORDINATES = [42.656790, 23.355149]
-const generatePopUpMessage = (targetName = 'Target') => `<p>${targetName}</p>`
 
-console.log(sum(2,3));
+const generatePopUpMessage = (targetName = 'Target') => `<p>${targetName}</p>`
 
 const mymap = L.map('mapid', {
 	// options
@@ -22,14 +19,16 @@ map.panTo([50, 30]);
 */
 
 let currentMarker;
+let clickedLatitude;
+let clickedLongitude;
 
 const onMapClick = (e) => {
 	if (currentMarker) { 
         mymap.removeLayer(currentMarker); 
 	}
-	const lat = e.latlng.lat
-	const lng = e.latlng.lng
-    currentMarker = L.marker([lat, lng]).addTo(mymap);
+	clickedLatitude  = e.latlng.lat
+	clickedLongitude = e.latlng.lng
+    currentMarker = L.marker([clickedLatitude , clickedLongitude]).addTo(mymap);
 	
 }
 mymap.on('click', onMapClick);
