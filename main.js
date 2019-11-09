@@ -22,6 +22,14 @@ let currentMarker;
 let clickedLatitude;
 let clickedLongitude;
 
+const asyncMethod = async () => {
+	const data = await fetch('https://api.github.com/users/octocat').then(res => res.json())
+	console.log(data);
+	
+}
+
+asyncMethod()
+
 const onMapClick = (e) => {
 	if (currentMarker) { 
         mymap.removeLayer(currentMarker); 
