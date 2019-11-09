@@ -87,7 +87,7 @@ const coordinates = [
 	},
 	{
 		latitude: 44.658781,
-		longitude: 23.355191,
+		longitude: 20.355191,
 	},
 	{
 		latitude: 45.653333,
@@ -95,7 +95,7 @@ const coordinates = [
 	},
 	{
 		latitude: 46.653333,
-		longitude: 23.355191,
+		longitude: 30.355191,
 	},
 	{
 		latitude: 47.653333,
@@ -106,12 +106,11 @@ const coordinates = [
 
 const drawRoute = (coordinates) => {
 	for(let i = 0; i < coordinates.length - 1; i++) {
-		console.log('honda');
-		
 		const firstLatitude = coordinates[i].latitude;
 		const firstLongitude = coordinates[i].longitude;
-		const finalLatitude = coordinates[i].latitude;
-		const finalLongitude = coordinates[i].longitude;
+		const finalLatitude = coordinates[i+1].latitude;
+		const finalLongitude = coordinates[i+1].longitude;		
+		
 		drawLine(firstLatitude, firstLongitude, finalLatitude, finalLongitude)
 	}
 }
