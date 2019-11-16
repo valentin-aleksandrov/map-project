@@ -1,3 +1,18 @@
-#mapid { 
-    height: 400px; 
+body {
+    margin: 0;
+}
+header {
+    background-color: #007dcf;
+}
+header h1 {
+    color: #ffffff;
+    margin: 0;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+main #mapid { 
+    height: 90vh; 
 }
