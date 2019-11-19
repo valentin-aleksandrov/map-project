@@ -12,9 +12,6 @@ if (navigator.geolocation) {
 	});
 }
 
-// currentLocationCoordinates = currentLocationCoordinates || TU_SOFIA_COORDINATES;
-
-
 function main(currentLocationCoordinates) {
 	const service = new MapServiceImpl();
 
